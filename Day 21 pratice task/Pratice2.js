@@ -45,3 +45,4 @@ let studentdetails = new tourdetails()
 studentdetails.addlist("ruban", 21, "Class A")
 studentdetails.addlist("Jeni",21,"Class B")
 console.log(studentdetails)
+
