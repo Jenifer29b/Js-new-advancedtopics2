@@ -12,6 +12,8 @@ try {
     console.log("Name:",error.name)
 }
 
+// Password error
+
 class PasswordError extends Error{
     constructor(message) {
         super(message)
@@ -54,8 +56,8 @@ class Passwordcheck extends Error{
 }
 
 function Loginerror(username, password) {
-    if(username.length === 0 ){
-        throw new UsernameError("username not empty")
+    if(username.length === 0 || username.length < 5 ){
+        throw new UsernameError("username not empty and not lesser than 6words")
     } else if (password.length < 6) {
         throw new Passwordcheck("Password should be greater than 6")
     } else {
@@ -64,7 +66,7 @@ function Loginerror(username, password) {
 }
 
 try {
-    Loginerror("jeni","1234567")
+    Loginerror("jenier","1234567")
 } catch (error) {
     if (error instanceof UsernameError) {
         console.log("user message" ,error.message)
