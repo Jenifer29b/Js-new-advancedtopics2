@@ -1,6 +1,3 @@
-
-
-
 let mypromise = new Promise((resolve, reject) => {
     console.log("Task started")
     setTimeout(() => {
@@ -30,4 +27,29 @@ ticketbooking()
     .catch(() => console.log("Booking failed"))
 
 
-    console.log(Math.floor(Math.random()*2))
+//Promise chaining :
+
+//(define the promise)
+function mypromise() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("helo welcome back jeni") 
+            resolve()
+        }, 1000);
+    })
+}
+
+function mypromise2() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("helo welcome back ruban") 
+            resolve()
+        }, 1000);
+    })
+}
+//handers:(access the promise) 
+mypromise()
+    .then(() => mypromise2())
+    .then(()=>console.log("Welcome both of u"))
+    .catch(()=>console.log("error"));
+    
