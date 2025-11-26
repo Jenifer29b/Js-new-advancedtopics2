@@ -1,31 +1,31 @@
 //values in promise chaining
 
-// function promise1(num) {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             console.log("Step 1 running")
-//             resolve(num)
-//         }, 1000);
-//     })
-// }
+function promise1(num) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Step 1 running")
+            resolve(num)
+        }, 1000);
+    })
+}
 
-// function promise2(num) {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             console.log("Step 2 running")
-//             resolve(num*10)
-//         }, 1000);
-//     })
-// }
-// promise1(10)
-//     .then((num1) => {
-//         console.log("the result of step1", num1)
-//         return promise2(num1)
-//     })
-//     .then((num2) => {
-//         console.log("the result of step2", num2)
+function promise2(num) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Step 2 running")
+            resolve(num*10)
+        }, 1000);
+    })
+}
+promise1(10)
+    .then((num1) => {
+        console.log("the result of step1", num1)
+        return promise2(num1)
+    })
+    .then((num2) => {
+        console.log("the result of step2", num2)
         
-//     })
+    })
 
 //example : bankbaance
 
